@@ -1,0 +1,37 @@
+# ---------- Java / Maven ----------
+target/
+*.class
+hs_err_pid*
+replay_pid*
+
+# ---------- Node / Vite ----------
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+
+# ---------- IDE ----------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+
+# ---------- OS ----------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# ---------- 运行时数据 ----------
+uploads/
+logs/
+*.log
+
+# ---------- 本地/生产配置，绝不提交 ----------
+application-local.yml
+application-prod.yml
+.env.local
+.env.*.local
