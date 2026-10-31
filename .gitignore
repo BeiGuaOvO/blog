@@ -35,3 +35,7 @@ application-local.yml
 application-prod.yml
 .env.local
 .env.*.local
+
+# ---------- build -----------
+build.bat
+*.tar.gz

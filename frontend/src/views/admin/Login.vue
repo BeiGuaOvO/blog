@@ -2,7 +2,7 @@
   <div class="login-page">
     <div class="login-card">
       <h1>登录后台</h1>
-      <p class="muted">{{ site.config.siteName }} · 请输入管理员账号</p>
+      <p class="muted">{{ siteName }} · 请输入管理员账号</p>
 
       <el-form ref="formRef" :model="form" :rules="rules" @keyup.enter="submit">
         <el-form-item prop="username">
@@ -28,14 +28,19 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { useUserStore } from '@/stores/user'
+import { useSiteStore } from '@/stores/site'
 
 const route = useRoute()
 const router = useRouter()
 const user = useUserStore()
+const site = useSiteStore()          // ★ 就是漏了这行
+
+// 可选链 + 兜底：即使 store 还没加载完也不会崩
+const siteName = computed(() => site?.config?.siteName || '博客')
 
 const formRef = ref(null)
 const loading = ref(false)
