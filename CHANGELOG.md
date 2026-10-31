@@ -14,6 +14,16 @@
 - 文章历史版本与 diff 对比
 - RSS / Atom 订阅
 
+## [1.0.1] - 2026-10-31
+### Fixed
+- 登录页白屏：模板引用 `site.config` 但 `<script setup>` 未声明 `useSiteStore()`，
+  渲染时抛出 `Cannot read properties of undefined (reading 'config')`
+- 补全前台与后台页面中缺失的同类 store 声明
+- 模板中的站点名改为 computed 并做空值兜底，store 未加载完成时不再中断渲染
+[Unreleased]: https://github.com/beiguaovo/blog/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/beiguaovo/blog/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/beiguaovo/blog/releases/tag/v1.0.0
+
 ## [1.0.0] - 2026-10-31
 
 首个可用版本，覆盖博客与知识库的核心读写链路。
